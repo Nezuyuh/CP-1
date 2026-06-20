@@ -21,6 +21,23 @@ app.use('/api/admin', adminRoutes);
 
 app.get('/health', (_, res) => res.json({ status: 'ok' }));
 
+app.get('/api/debug', async (req, res) => {
+  const checks = {
+    DATABASE_URL: !!process.env.DATABASE_URL,
+    JWT_SECRET: !!process.env.JWT_SECRET,
+    SUPABASE_URL: !!process.env.SUPABASE_URL,
+    NODE_ENV: process.env.NODE_ENV || 'not set',
+  };
+  try {
+    const prisma = require('./lib/prisma');
+    await prisma.$queryRaw`SELECT 1`;
+    checks.db_connection = 'ok';
+  } catch (e) {
+    checks.db_connection = e.message;
+  }
+  res.json(checks);
+});
+
 app.use((err, req, res, next) => {
   console.error(err);
   res.status(500).json({ message: err.message || 'Internal server error' });
