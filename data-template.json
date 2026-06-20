@@ -1,0 +1,421 @@
+[
+  {
+    "image": "sample1.jpg",
+    "tour_title": "AVATAR CITY",
+    "destinations": "CEBU AVATAR + SHANGHAI",
+    "duration": "5D4N TOUR",
+    "price_per_person": "",
+    "currency": "USD",
+    "price_notes": "+$100/pax for specific peak dates (Oct 30-Nov 03, Nov 27-Dec 01, Dec 25-29)",
+    "travel_dates": [
+      "Sep. 04-08",
+      "Sep. 11-15",
+      "Sep. 18-22",
+      "Sep. 25-29",
+      "Oct. 09-13",
+      "Oct. 16-20",
+      "Oct. 23-27",
+      "Oct. 30-Nov. 03",
+      "Nov. 06-10",
+      "Nov. 13-17",
+      "Nov. 20-24",
+      "Nov. 27-Dec. 01",
+      "Dec. 04-08",
+      "Dec. 11-15",
+      "Dec. 18-22",
+      "Dec. 25-29"
+    ],
+    "airline": "CHINA EASTERN",
+    "flight_details": [
+      "MU5024 CEBPVG 0340 0840",
+      "FM9343 PVGDYG 2120 0135+1",
+      "FM9344 DYGPVG 1915 2135",
+      "MU5023 PVGCEB 2355 0340+1"
+    ],
+    "itinerary": [
+      {
+        "day": "DAY 1",
+        "title": "ARRIVAL IN SHANGHAI",
+        "activities": [
+          "Arrive in Shanghai Pudong Airport",
+          "Meet the tour guide at airport",
+          "Visit Century Park",
+          "Old historical car / The Bund",
+          "Transfer back to airport for fly to Zhangjiajie",
+          "Arrive in Zhangjiajie",
+          "Meet the tour guide at the airport",
+          "Transfer to hotel and check-in"
+        ],
+        "accommodation": "5★ Hotel in Zhangjiajie"
+      },
+      {
+        "day": "DAY 2",
+        "title": "AVATAR SCENIC AREA",
+        "activities": [
+          "Breakfast at the hotel",
+          "Avatar scenic area via Bailong Elevator",
+          "No. 1 Bridge",
+          "Hallelujah Mountain",
+          "Yuanjiajie Scenic Platforms",
+          "West Sea Towers",
+          "Tianzi Mountain",
+          "Compulsory shopping stop @ Late Jade Factory Shop",
+          "After dinner, transfer back to hotel"
+        ],
+        "accommodation": "5★ Hotel in Zhangjiajie"
+      },
+      {
+        "day": "DAY 3",
+        "title": "GLASS BRIDGE",
+        "activities": [
+          "Breakfast at the hotel",
+          "Grand Canyon Scenic Glass Bridge",
+          "VR Experience Walk",
+          "Baofeng Lake Boat experience",
+          "Compulsory shopping stop @ Chinese Medicine Shop",
+          "After dinner, transfer to hotel"
+        ],
+        "accommodation": "5★ Hotel in Zhangjiajie"
+      },
+      {
+        "day": "DAY 4",
+        "title": "TIANMEN MOUNTAIN",
+        "activities": [
+          "Breakfast at the hotel",
+          "Tianmen Mountain Scenic Area",
+          "Compulsory Shopping Stop @ Silk Shop",
+          "Optional Tour: + USD 80/Pax Tianmen Mountain Fox Fairy Show",
+          "Optional Tour: + USD 80/Pax Xiangxi Song and Dance Show",
+          "Take ticket transfer back to Zhangjiajie"
+        ],
+        "accommodation": "4★ Hotel in Shanghai"
+      },
+      {
+        "day": "DAY 5",
+        "title": "FLORENTIA VILLAGE",
+        "activities": [
+          "Breakfast at the hotel",
+          "Visit Chenghuang Temple Tourist Town",
+          "Free shopping at Florentia Village Outlets",
+          "Transfer to airport and fly back home"
+        ],
+        "accommodation": "SWEET HOME"
+      }
+    ]
+  },
+  {
+    "file_name": "sample2.jpg",
+    "tour_title": "JAPAN",
+    "destinations": "Tokyo - Yokohama - Mt. Fuji",
+    "duration": "5D4N TOUR",
+    "price_per_person": "999",
+    "currency": "USD",
+    "price_notes": "ALL IN PER PERSON",
+    "travel_dates": [
+      "OCT. 27 - 31",
+      "NOV. 21 - 25"
+    ],
+    "airline": "",
+    "flight_details": [
+      "5J926 MNLNRT 0505 1030",
+      "5J925 NRTMNL 1145 1555"
+    ],
+    "itinerary": [
+      {
+        "day": "DAY 1",
+        "title": "ARRIVAL IN TOKYO",
+        "activities": [
+          "Arrive Tokyo, meet the tour guide at Narita International Airport",
+          "Visit Asakusa Temple",
+          "Visit Nakamise Shopping Street",
+          "Visit Sky Tree (Photo Stop)",
+          "Transfer to hotel and check-in",
+          "Enjoy dinner and onsen experience at the hotel"
+        ],
+        "accommodation": "4★ HOTEL OR SIMILAR"
+      },
+      {
+        "day": "DAY 2",
+        "title": "MT. FUJI & KAWAGUCHI",
+        "activities": [
+          "Hotel breakfast",
+          "Transfer to and visit Lake Kawaguchi",
+          "Matcha experience or Earthquake experience",
+          "Visit Oshino Hakkai",
+          "Free time for shopping in Gotemba Premium Outlets",
+          "Transfer to hotel and check-in"
+        ],
+        "accommodation": "4★ HOTEL OR SIMILAR"
+      },
+      {
+        "day": "DAY 3",
+        "title": "YOKOHAMA TOUR",
+        "activities": [
+          "Hotel breakfast",
+          "Transfer to Yokohama",
+          "Visit Red Brick Warehouse",
+          "Visit Ramen Museum",
+          "Visit Nijubashi Bridge",
+          "Visit Duty Free Cosmetics store",
+          "Transfer to hotel and check-in"
+        ],
+        "accommodation": "4★ HOTEL OR SIMILAR"
+      },
+      {
+        "day": "DAY 4",
+        "title": "TOKYO CITY TOUR",
+        "activities": [
+          "Hotel breakfast",
+          "Visit Odaiba Gundam Statue",
+          "Visit Shibuya Crossing, Hachiko Statue",
+          "Lunch: upgrade to BBQ Buffet",
+          "Visit Pearl Duty Free Shop",
+          "Enjoy shopping time"
+        ],
+        "accommodation": "4★ HOTEL OR SIMILAR"
+      },
+      {
+        "day": "DAY 5",
+        "title": "DEPARTURE",
+        "activities": [
+          "Hotel breakfast",
+          "Free time until departure",
+          "Transfer to Narita International Airport for flight back home"
+        ],
+        "accommodation": "SWEET HOME"
+      }
+    ]
+  },
+  {
+    "file_name": "sample3.jpg",
+    "tour_title": "UZBEKISTAN KYRGYZSTAN",
+    "destinations": "CENTRAL ASIA 2IN1",
+    "duration": "10D8N TOUR",
+    "price_per_person": "3288",
+    "currency": "USD",
+    "price_notes": "NO HIDDEN CHARGES! ADULT",
+    "travel_dates": [
+      "AUG. 18-27, 2026",
+      "SEP. 08-17, 2026",
+      "OCT. 20-29, 2026"
+    ],
+    "airline": "MALAYSIA AIRLINES & UZBEKISTAN AIRWAYS",
+    "flight_details": [
+      "MH 806 MNLKUL 0650 1050",
+      "HY 552 KULTAS 1050 1520"
+    ],
+    "itinerary": [
+      {
+        "day": "DAY 1",
+        "title": "TASHKENT ARRIVAL",
+        "activities": [
+          "Arrival in Tashkent Airport",
+          "Meet & greet",
+          "Transfer to hotel and check in"
+        ],
+        "accommodation": "Local 4★ Hotel"
+      },
+      {
+        "day": "DAY 2",
+        "title": "TASHKENT CITY TOUR - SAMARKAND",
+        "activities": [
+          "Breakfast at hotel",
+          "Tashkent City Tour",
+          "Transfer to Samarkand by Afrosiyob Bullet Train"
+        ],
+        "accommodation": "Local 4★ Hotel"
+      },
+      {
+        "day": "DAY 3",
+        "title": "SAMARKAND CITY TOUR",
+        "activities": [
+          "Breakfast at hotel",
+          "Samarkand City Tour"
+        ],
+        "accommodation": "Local 4★ Hotel"
+      },
+      {
+        "day": "DAY 4",
+        "title": "SAMARKAND CITY TOUR - TASHKENT",
+        "activities": [
+          "Breakfast at hotel",
+          "Samarkand City Tour",
+          "Transfer to Tashkent by Afrosiyob Bullet Train"
+        ],
+        "accommodation": "Local 4★ Hotel"
+      },
+      {
+        "day": "DAY 5",
+        "title": "BISHKEK CITY TOUR",
+        "activities": [
+          "Breakfast at hotel",
+          "Flight to Bishkek",
+          "Bishkek City Tour",
+          "Transfer to hotel and check in"
+        ],
+        "accommodation": "Local 4★ Hotel"
+      },
+      {
+        "day": "DAY 6",
+        "title": "CHONG-KEMIN & BURANA",
+        "activities": [
+          "Breakfast at hotel",
+          "Burana Tower",
+          "Chong Kemin Valley",
+          "Mineral Springs"
+        ],
+        "accommodation": "Local 4★ Hotel"
+      },
+      {
+        "day": "DAY 7",
+        "title": "ISSYK-KUL LAKE",
+        "activities": [
+          "Breakfast at hotel",
+          "Issyk-Kul Lake",
+          "Canyon Fairy Tale"
+        ],
+        "accommodation": "Local 4★ Hotel"
+      },
+      {
+        "day": "DAY 8",
+        "title": "ALMATY CITY TOUR",
+        "activities": [
+          "Breakfast at hotel",
+          "Almaty City Tour",
+          "Panfilov Park",
+          "Zenkov Cathedral",
+          "Central Mosque"
+        ],
+        "accommodation": "Local 4★ Hotel"
+      },
+      {
+        "day": "DAY 9 & 10",
+        "title": "DEPARTURE",
+        "activities": [
+          "Breakfast at hotel",
+          "Transfer to airport for flight back home"
+        ],
+        "accommodation": "SWEET HOME"
+      }
+    ]
+  },
+  {
+    "file_name": "sample4.jpg",
+    "tour_title": "HAWAIIAN HIGHLIGHTS",
+    "destinations": "Hawaii",
+    "duration": "8D6N TOUR",
+    "price_per_person": "4160",
+    "currency": "USD",
+    "price_notes": "PER PERSON TWIN SHARE. Twin/Triple share: USD 4,160.00. Single supplement: USD 1,330. Valid from June 1, 2026 - September 30, 2026. (Min. of 2 guests)",
+    "travel_dates": [
+      "04-11 Jun 2026",
+      "07-14 Jun 2026",
+      "14-21 Jun 2026",
+      "18-25 Jun 2026",
+      "21-28 Jun 2026",
+      "28 Jun-05 Jul 2026",
+      "02-09 Jul 2026",
+      "05-12 Jul 2026",
+      "09-16 Jul 2026",
+      "12-19 Jul 2026",
+      "21-28 Jul 2026",
+      "28 Jul-04 Aug 2026",
+      "02-09 Aug 2026",
+      "09-16 Aug 2026",
+      "13-20 Aug 2026",
+      "16-23 Aug 2026",
+      "20-27 Aug 2026",
+      "23-30 Aug 2026",
+      "06-13 Sep 2026",
+      "13-20 Sep 2026",
+      "20-27 Sep 2026",
+      "26 Sep-03 Oct 2026",
+      "27 Sep-04 Oct 2026"
+    ],
+    "airline": "",
+    "flight_details": [],
+    "itinerary": [
+      {
+        "day": "DAY 1",
+        "title": "DEPARTURE FROM MANILA | WELCOME TO HONOLULU",
+        "activities": [
+          "Arrive at Honolulu International Airport",
+          "Receive a warm ALOHA welcome with a fresh flower lei",
+          "Meet the driver at airport",
+          "Overnight stay at hotel"
+        ],
+        "accommodation": "3.5 STAR ACCOMMODATION"
+      },
+      {
+        "day": "DAY 2",
+        "title": "PEARL HARBOR & HONOLULU CITY TOUR (B)",
+        "activities": [
+          "Hotel Breakfast",
+          "Pearl Harbor Gates and Visitor Center",
+          "WWII Monument, USS Arizona Memorial",
+          "Honolulu City landmarks: King Kamehameha Statue, Iolani Palace, State Capital"
+        ],
+        "accommodation": "3.5 STAR ACCOMMODATION"
+      },
+      {
+        "day": "DAY 3",
+        "title": "OAHU MINI CIRCLE ISLAND (B)",
+        "activities": [
+          "Hotel Breakfast",
+          "Full Day Tour: Diamond Head, Halona Blowhole, Sandy Beach, Makapu'u Point"
+        ],
+        "accommodation": "3.5 STAR ACCOMMODATION"
+      },
+      {
+        "day": "DAY 4",
+        "title": "POLYNESIAN CULTURAL CENTER TOUR WITH BUFFET DINNER (B/D)",
+        "activities": [
+          "Hotel Breakfast",
+          "Free Afternoon",
+          "Polynesian Cultural Center",
+          "Islands Village Activity",
+          "Alid'i Luau Dinner Show, Ha: Breath of Life Show"
+        ],
+        "accommodation": "3.5 STAR ACCOMMODATION"
+      },
+      {
+        "day": "DAY 5",
+        "title": "SUNSET DINNER CRUISE (B/D)",
+        "activities": [
+          "Hotel Breakfast",
+          "Star of Honolulu Sunset Dinner Cruise",
+          "3-Course Dinner",
+          "Polynesian Show",
+          "Breathtaking Ocean Views"
+        ],
+        "accommodation": "3.5 STAR ACCOMMODATION"
+      },
+      {
+        "day": "DAY 6",
+        "title": "FREE DAY OR OPTIONAL EXCURSIONS (B)",
+        "activities": [
+          "Hotel Breakfast",
+          "Free Day for Leisure / Shopping"
+        ],
+        "accommodation": "3.5 STAR ACCOMMODATION"
+      },
+      {
+        "day": "DAY 7",
+        "title": "DEPARTURE FROM HONOLULU (B)",
+        "activities": [
+          "Hotel Breakfast",
+          "Airport Departure Transfer"
+        ],
+        "accommodation": "In-flight"
+      },
+      {
+        "day": "DAY 8",
+        "title": "ARRIVAL IN MANILA",
+        "activities": [
+          "Flight arrives in Manila"
+        ],
+        "accommodation": ""
+      }
+    ]
+  }
+]

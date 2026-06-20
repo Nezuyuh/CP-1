@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body { @apply bg-gray-50 text-gray-900 antialiased; }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-brand text-white px-5 py-2.5 rounded-lg font-semibold hover:bg-brand-dark transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed inline-block text-center;
+  }
+  .btn-accent {
+    @apply bg-accent text-white px-5 py-2.5 rounded-lg font-semibold hover:bg-accent-dark transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed inline-block text-center;
+  }
+  .btn-gold {
+    @apply bg-gold text-white px-5 py-2.5 rounded-lg font-semibold hover:bg-gold-dark transition-all duration-200 inline-block text-center;
+  }
+  .btn-secondary {
+    @apply bg-white border border-gray-300 text-gray-700 px-5 py-2.5 rounded-lg font-medium hover:bg-gray-50 transition-colors inline-block text-center;
+  }
+  .btn-outline-white {
+    @apply border-2 border-white text-white px-5 py-2.5 rounded-lg font-semibold hover:bg-white hover:text-brand transition-all duration-200 inline-block text-center;
+  }
+  .input {
+    @apply w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-shadow;
+  }
+  .label {
+    @apply block text-sm font-medium text-gray-700 mb-1;
+  }
+  .card {
+    @apply bg-white rounded-xl shadow-sm border border-gray-100;
+  }
+  .section-title {
+    @apply text-2xl sm:text-3xl font-extrabold text-brand;
+  }
+  .stat-card {
+    @apply card p-5 flex items-center gap-4;
+  }
+}

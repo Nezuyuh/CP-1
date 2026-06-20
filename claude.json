@@ -1,0 +1,13 @@
+{
+  "system": [
+    {
+      "type": "text",
+      "text": "Here is the entire codebase context... [Insert huge text files here]",
+      "cache_control": {"type": "ephemeral"} 
+    },
+    {
+      "type": "text",
+      "text": "You are a senior developer assistant specialized in this codebase."
+    }
+  ]
+}
