@@ -52,8 +52,16 @@ export default function Footer() {
               <li><Link to="/login" className="hover:text-white transition-colors">Login</Link></li>
             </ul>
             <h3 className="font-bold text-sm uppercase tracking-wider text-gold mb-3">Contact Us</h3>
-            <p className="text-sm text-blue-200 mb-1">📧 info@engellatravel.com</p>
-            <p className="text-sm text-blue-200">📞 +63 XXX XXX XXXX</p>
+            <p className="text-sm text-blue-200 mb-1">📧 reservation.engellatravel@gmail.com</p>
+            <p className="text-sm text-blue-200 mb-1">📞 0960 859 3544</p>
+            <a
+              href="https://www.facebook.com/engellatravelandtours/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-blue-200 hover:text-white transition-colors"
+            >
+              📘 Facebook Page
+            </a>
           </div>
         </div>
 
