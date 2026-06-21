@@ -1,7 +1,7 @@
 const prisma = require('../lib/prisma');
 const supabase = require('../lib/supabase');
 
-const BUCKET = 'booking-documents';
+const BUCKET = 'requirement';
 
 const bookingInclude = {
   tour: { include: { travelDates: true } },

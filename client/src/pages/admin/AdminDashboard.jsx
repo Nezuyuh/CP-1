@@ -128,6 +128,81 @@ const STATUS_STYLES = {
 };
 
 // ─── Bookings Panel ───────────────────────────────────────────────────────────
+function BookingRow({ b, onStatusChange }) {
+  const [expanded, setExpanded] = useState(false);
+
+  return (
+    <>
+      <tr className="hover:bg-gray-50 transition-colors">
+        <td className="py-3.5 pr-4">
+          <p className="font-semibold text-gray-900">{b.user?.firstName} {b.user?.lastName}</p>
+          <p className="text-xs text-gray-400">{b.user?.email}</p>
+        </td>
+        <td className="py-3.5 pr-4 font-medium text-gray-800">{b.tour?.tourTitle}</td>
+        <td className="py-3.5 pr-4 text-gray-600 text-xs">{b.travelDate?.dateLabel}</td>
+        <td className="py-3.5 pr-4 text-center">{b.paxCount}</td>
+        <td className="py-3.5 pr-4 font-semibold text-accent">
+          {b.totalPrice ? `${b.tour?.currency} ${parseFloat(b.totalPrice).toLocaleString()}` : '—'}
+        </td>
+        <td className="py-3.5 pr-4">
+          <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${b.isOnsiteBooking ? 'bg-purple-100 text-purple-700' : 'bg-gray-100 text-gray-600'}`}>
+            {b.isOnsiteBooking ? 'Onsite' : 'Online'}
+          </span>
+        </td>
+        <td className="py-3.5 pr-4">
+          <span className={`text-xs font-bold px-2.5 py-1 rounded-full ${STATUS_STYLES[b.status]}`}>
+            {b.status}
+          </span>
+        </td>
+        <td className="py-3.5 pr-3">
+          <select
+            className="text-xs border border-gray-200 rounded-lg px-2 py-1 bg-white focus:outline-none focus:ring-1 focus:ring-brand"
+            value={b.status}
+            onChange={(e) => onStatusChange(b.id, e.target.value)}>
+            <option value="PENDING">Pending</option>
+            <option value="CONFIRMED">Confirmed</option>
+            <option value="CANCELLED">Cancelled</option>
+          </select>
+        </td>
+        <td className="py-3.5">
+          <button
+            onClick={() => setExpanded((v) => !v)}
+            className={`text-xs font-medium px-2.5 py-1 rounded-lg border transition-colors ${
+              b.documents?.length
+                ? 'border-brand/40 text-brand hover:bg-blue-50'
+                : 'border-gray-200 text-gray-400 hover:bg-gray-50'
+            }`}>
+            📎 {b.documents?.length || 0}
+          </button>
+        </td>
+      </tr>
+      {expanded && (
+        <tr>
+          <td colSpan={9} className="pb-4 px-2">
+            <div className="bg-blue-50 rounded-xl px-4 py-3">
+              <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">
+                Requirements / Documents
+              </p>
+              {b.documents?.length ? (
+                <div className="flex flex-wrap gap-2">
+                  {b.documents.map((d) => (
+                    <a key={d.id} href={d.fileUrl} target="_blank" rel="noreferrer"
+                      className="text-xs text-brand hover:underline bg-white border border-blue-100 px-3 py-1.5 rounded-lg flex items-center gap-1.5 shadow-sm">
+                      📄 {d.fileName}
+                    </a>
+                  ))}
+                </div>
+              ) : (
+                <p className="text-xs text-gray-400 italic">No documents uploaded yet.</p>
+              )}
+            </div>
+          </td>
+        </tr>
+      )}
+    </>
+  );
+}
+
 function BookingsPanel() {
   const [bookings, setBookings] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -174,43 +249,13 @@ function BookingsPanel() {
                 <th className="pb-3 pr-4 text-xs font-semibold text-gray-500 uppercase tracking-wide">Total</th>
                 <th className="pb-3 pr-4 text-xs font-semibold text-gray-500 uppercase tracking-wide">Source</th>
                 <th className="pb-3 pr-4 text-xs font-semibold text-gray-500 uppercase tracking-wide">Status</th>
-                <th className="pb-3 text-xs font-semibold text-gray-500 uppercase tracking-wide">Action</th>
+                <th className="pb-3 pr-3 text-xs font-semibold text-gray-500 uppercase tracking-wide">Action</th>
+                <th className="pb-3 text-xs font-semibold text-gray-500 uppercase tracking-wide">Docs</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-100">
               {bookings.map((b) => (
-                <tr key={b.id} className="hover:bg-gray-50 transition-colors">
-                  <td className="py-3.5 pr-4">
-                    <p className="font-semibold text-gray-900">{b.user?.firstName} {b.user?.lastName}</p>
-                    <p className="text-xs text-gray-400">{b.user?.email}</p>
-                  </td>
-                  <td className="py-3.5 pr-4 font-medium text-gray-800">{b.tour?.tourTitle}</td>
-                  <td className="py-3.5 pr-4 text-gray-600 text-xs">{b.travelDate?.dateLabel}</td>
-                  <td className="py-3.5 pr-4 text-center">{b.paxCount}</td>
-                  <td className="py-3.5 pr-4 font-semibold text-accent">
-                    {b.totalPrice ? `${b.tour?.currency} ${parseFloat(b.totalPrice).toLocaleString()}` : '—'}
-                  </td>
-                  <td className="py-3.5 pr-4">
-                    <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${b.isOnsiteBooking ? 'bg-purple-100 text-purple-700' : 'bg-gray-100 text-gray-600'}`}>
-                      {b.isOnsiteBooking ? 'Onsite' : 'Online'}
-                    </span>
-                  </td>
-                  <td className="py-3.5 pr-4">
-                    <span className={`text-xs font-bold px-2.5 py-1 rounded-full ${STATUS_STYLES[b.status]}`}>
-                      {b.status}
-                    </span>
-                  </td>
-                  <td className="py-3.5">
-                    <select
-                      className="text-xs border border-gray-200 rounded-lg px-2 py-1 bg-white focus:outline-none focus:ring-1 focus:ring-brand"
-                      value={b.status}
-                      onChange={(e) => updateStatus(b.id, e.target.value)}>
-                      <option value="PENDING">Pending</option>
-                      <option value="CONFIRMED">Confirmed</option>
-                      <option value="CANCELLED">Cancelled</option>
-                    </select>
-                  </td>
-                </tr>
+                <BookingRow key={b.id} b={b} onStatusChange={updateStatus} />
               ))}
             </tbody>
           </table>
