@@ -19,8 +19,7 @@ async function uploadFile(path, buffer, contentType) {
     Body: buffer,
     ContentType: contentType,
   }));
-  // Supabase public URL pattern derived from the storage endpoint
-  const projectUrl = process.env.STORAGE_ENDPOINT.replace('.storage.supabase.co', '.supabase.co');
+  const projectUrl = process.env.SUPABASE_URL;
   return `${projectUrl}/storage/v1/object/public/${BUCKET}/${path}`;
 }
 
