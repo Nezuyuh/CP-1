@@ -1,0 +1,7 @@
+{
+  "rewrites": [
+    { "source": "/api/:path*", "destination": "/api/index.js" },
+    { "source": "/promo-img/:path*", "destination": "/api/index.js" },
+    { "source": "/((?!api|promo-img).*)", "destination": "/index.html" }
+  ]
+}
