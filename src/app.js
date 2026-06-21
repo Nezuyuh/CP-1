@@ -26,6 +26,10 @@ app.get('/api/debug', async (req, res) => {
     DATABASE_URL: !!process.env.DATABASE_URL,
     JWT_SECRET: !!process.env.JWT_SECRET,
     SUPABASE_URL: !!process.env.SUPABASE_URL,
+    STORAGE_ENDPOINT: !!process.env.STORAGE_ENDPOINT,
+    STORAGE_REGION: !!process.env.STORAGE_REGION,
+    STORAGE_ACCESS_KEY_ID: !!process.env.STORAGE_ACCESS_KEY_ID,
+    STORAGE_SECRET_ACCESS_KEY: !!process.env.STORAGE_SECRET_ACCESS_KEY,
     NODE_ENV: process.env.NODE_ENV || 'not set',
   };
   try {
