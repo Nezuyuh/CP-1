@@ -13,6 +13,7 @@ export default function BookingPage() {
   const [booking, setBooking] = useState(null);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const [docUploadError, setDocUploadError] = useState(false);
 
   useEffect(() => {
     api.get(`/tours/${id}`).then((r) => setTour(r.data)).catch(console.error);
@@ -28,14 +29,18 @@ export default function BookingPage() {
     setLoading(true);
     try {
       const res = await api.post('/bookings', { tourId: id, ...form });
+      setBooking(res.data);
       if (files.length > 0) {
         const fd = new FormData();
         files.forEach((f) => fd.append('files', f));
-        await api.post(`/bookings/${res.data.id}/documents`, fd, {
-          headers: { 'Content-Type': 'multipart/form-data' },
-        });
+        try {
+          await api.post(`/bookings/${res.data.id}/documents`, fd, {
+            headers: { 'Content-Type': 'multipart/form-data' },
+          });
+        } catch {
+          setDocUploadError(true);
+        }
       }
-      setBooking(res.data);
     } catch (err) {
       setError(err.response?.data?.message || 'Booking failed. Please try again.');
     } finally {
@@ -55,16 +60,21 @@ export default function BookingPage() {
               </svg>
             </div>
             <h1 className="text-2xl font-bold text-gray-900 mb-2">Booking Submitted!</h1>
-            <p className="text-gray-500 mb-6 text-sm leading-relaxed">
+            <p className="text-gray-500 mb-4 text-sm leading-relaxed">
               Your booking is <strong className="text-yellow-700">pending confirmation</strong>. Our team will contact you shortly to finalize the details.
             </p>
+            {docUploadError && (
+              <div className="bg-yellow-50 border border-yellow-200 text-yellow-700 text-xs px-3 py-2 rounded-lg mb-4 text-left">
+                Documents could not be uploaded right now. You can upload them later from <strong>My Bookings</strong>.
+              </div>
+            )}
             <div className="bg-gray-50 rounded-lg p-3 mb-6">
               <p className="text-xs text-gray-400 mb-1">Booking Reference</p>
               <p className="font-mono text-sm font-bold text-brand break-all">{booking.id}</p>
             </div>
             <div className="flex gap-3 justify-center">
               <button onClick={() => navigate('/dashboard')} className="btn-primary py-2.5">My Bookings</button>
-              <button onClick={() => navigate('/')} className="btn-secondary py-2.5">Browse More</button>
+              <button onClick={() => navigate('/tours')} className="btn-secondary py-2.5">Browse More</button>
             </div>
           </div>
         </div>
