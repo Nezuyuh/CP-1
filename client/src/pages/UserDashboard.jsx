@@ -87,7 +87,7 @@ export default function UserDashboard() {
             <h1 className="text-2xl font-extrabold text-gray-900">My Bookings</h1>
             <p className="text-sm text-gray-500 mt-1">Welcome back, {user?.firstName} {user?.lastName}</p>
           </div>
-          <Link to="/" className="btn-primary text-sm py-2">Browse Tours</Link>
+          <Link to="/tours" className="btn-primary text-sm py-2">Browse Tours</Link>
         </div>
 
         {loading ? (
@@ -99,7 +99,7 @@ export default function UserDashboard() {
             <p className="text-5xl mb-4">✈️</p>
             <h2 className="text-lg font-bold text-gray-700 mb-2">No bookings yet</h2>
             <p className="text-gray-400 text-sm mb-6">Start planning your next adventure!</p>
-            <Link to="/" className="btn-primary">Browse Tour Packages</Link>
+            <Link to="/tours" className="btn-primary">Browse Tour Packages</Link>
           </div>
         ) : (
           <div className="space-y-4">

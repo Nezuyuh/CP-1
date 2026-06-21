@@ -181,7 +181,7 @@ export default function TourDetail() {
             )}
 
             <div className="mt-4 pt-4 border-t border-gray-100">
-              <Link to="/" className="text-sm text-brand hover:underline flex items-center gap-1">
+              <Link to={user ? '/tours' : '/'} className="text-sm text-brand hover:underline flex items-center gap-1">
                 ← Browse more tours
               </Link>
             </div>
