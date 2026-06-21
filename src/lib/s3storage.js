@@ -12,4 +12,14 @@ async function uploadFile(path, buffer, contentType) {
   return data.publicUrl;
 }
 
-module.exports = { uploadFile };
+async function uploadTourImage(filename, buffer, contentType) {
+  const { error } = await supabase.storage.from('tours_img').upload(filename, buffer, {
+    contentType,
+    upsert: true,
+  });
+  if (error) throw new Error(`Storage upload failed: ${error.message}`);
+  const { data } = supabase.storage.from('tours_img').getPublicUrl(filename);
+  return data.publicUrl;
+}
+
+module.exports = { uploadFile, uploadTourImage };

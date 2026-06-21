@@ -1,9 +1,13 @@
 const router = require('express').Router();
+const multer = require('multer');
 const { authenticate, requireAdmin } = require('../middleware/auth');
 const {
   createTour, updateTour, deleteTour,
   addFlight, updateFlight, deleteFlight,
+  uploadTourImage,
 } = require('../controllers/tour.controller');
+
+const imgUpload = multer({ storage: multer.memoryStorage(), limits: { fileSize: 5 * 1024 * 1024 } });
 const {
   getAllBookings, getBookingById, createOnsiteBooking, updateBooking,
 } = require('../controllers/booking.controller');
@@ -36,6 +40,7 @@ router.get('/stats', async (req, res) => {
 router.post('/tours', createTour);
 router.put('/tours/:id', updateTour);
 router.delete('/tours/:id', deleteTour);
+router.post('/tours/:id/image', imgUpload.single('image'), uploadTourImage);
 
 // ─── Flight CRUD ──────────────────────────────────────────────────────────────
 router.post('/tours/:tourId/flights', addFlight);

@@ -1,4 +1,5 @@
 const prisma = require('../lib/prisma');
+const { uploadTourImage: storeImage } = require('../lib/s3storage');
 
 const fullInclude = {
   travelDates: true,
@@ -142,8 +143,21 @@ const deleteFlight = async (req, res) => {
   }
 };
 
+const uploadTourImage = async (req, res) => {
+  try {
+    if (!req.file) return res.status(400).json({ message: 'No file provided' });
+    const ext = req.file.originalname.split('.').pop().toLowerCase();
+    const url = await storeImage(`${req.params.id}.${ext}`, req.file.buffer, req.file.mimetype);
+    await prisma.tour.update({ where: { id: req.params.id }, data: { image: url } });
+    res.json({ url });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
+
 module.exports = {
   getTours, getTourById,
   createTour, updateTour, deleteTour,
   addFlight, updateFlight, deleteFlight,
+  uploadTourImage,
 };

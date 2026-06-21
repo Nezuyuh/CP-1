@@ -9,7 +9,7 @@ function TourCard({ tour }) {
     <div className="card overflow-hidden group hover:shadow-lg transition-all duration-300">
       <div className="relative h-48 bg-gradient-to-br from-brand to-brand-light overflow-hidden">
         {tour.image ? (
-          <img src={`/promo-img/${tour.image}`} alt={tour.tourTitle}
+          <img src={tour.image} alt={tour.tourTitle}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
         ) : (
           <div className="w-full h-full flex items-center justify-center opacity-30">

@@ -529,6 +529,8 @@ function TourRow({ tour, onRefresh }) {
   const [expanded, setExpanded] = useState(false);
   const [fullTour, setFullTour] = useState(null);
   const [editMode, setEditMode] = useState(false);
+  const [imgUploading, setImgUploading] = useState(false);
+  const [currentImage, setCurrentImage] = useState(tour.image);
   const [form, setForm] = useState({
     tourTitle: tour.tourTitle, destinations: tour.destinations,
     duration: tour.duration, pricePerPerson: tour.pricePerPerson || '',
@@ -560,6 +562,25 @@ function TourRow({ tour, onRefresh }) {
     onRefresh();
   };
 
+  const handleImageChange = async (e) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    setImgUploading(true);
+    try {
+      const fd = new FormData();
+      fd.append('image', file);
+      const res = await api.post(`/admin/tours/${tour.id}/image`, fd, {
+        headers: { 'Content-Type': 'multipart/form-data' },
+      });
+      setCurrentImage(res.data.url);
+    } catch (err) {
+      alert(err.response?.data?.message || 'Image upload failed');
+    } finally {
+      setImgUploading(false);
+      e.target.value = '';
+    }
+  };
+
   return (
     <div className="border border-gray-200 rounded-xl overflow-hidden">
       <div className="flex items-center gap-4 p-4 bg-white hover:bg-gray-50/50 transition-colors">
@@ -575,8 +596,8 @@ function TourRow({ tour, onRefresh }) {
             </div>
           ) : (
             <div className="flex items-center gap-3">
-              {tour.image && (
-                <img src={`/promo-img/${tour.image}`} alt={tour.tourTitle}
+              {currentImage && (
+                <img src={currentImage} alt={tour.tourTitle}
                   className="w-12 h-10 rounded-lg object-cover flex-shrink-0" />
               )}
               <div className="min-w-0">
@@ -591,6 +612,12 @@ function TourRow({ tour, onRefresh }) {
         </div>
 
         <div className="flex gap-2 items-center flex-shrink-0">
+          <label className={`text-xs py-1.5 px-3 rounded-lg border cursor-pointer transition-colors ${
+            imgUploading ? 'border-gray-200 text-gray-300' : 'border-gray-200 text-gray-500 hover:border-brand hover:text-brand'
+          }`}>
+            {imgUploading ? '…' : '📷'}
+            <input type="file" accept="image/*" className="hidden" disabled={imgUploading} onChange={handleImageChange} />
+          </label>
           {editMode ? (
             <>
               <button onClick={save} className="btn-primary text-xs py-1.5 px-3">Save</button>

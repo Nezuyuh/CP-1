@@ -51,7 +51,7 @@ export default function TourDetail() {
       {/* Hero */}
       <div className="relative h-72 sm:h-80 bg-gradient-to-br from-brand-dark to-brand overflow-hidden">
         {tour.image && (
-          <img src={`/promo-img/${tour.image}`} alt={tour.tourTitle}
+          <img src={tour.image} alt={tour.tourTitle}
             className="absolute inset-0 w-full h-full object-cover opacity-40" />
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
