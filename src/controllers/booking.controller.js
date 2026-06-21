@@ -1,7 +1,5 @@
 const prisma = require('../lib/prisma');
-const supabase = require('../lib/supabase');
-
-const BUCKET = 'requirement';
+const { uploadFile } = require('../lib/s3storage');
 
 const bookingInclude = {
   tour: { include: { travelDates: true } },
@@ -59,13 +57,7 @@ const uploadDocuments = async (req, res) => {
     const saved = await Promise.all(
       req.files.map(async (file) => {
         const path = `${booking.id}/${Date.now()}-${file.originalname}`;
-        const { error } = await supabase.storage
-          .from(BUCKET)
-          .upload(path, file.buffer, { contentType: file.mimetype });
-        if (error) throw new Error(error.message);
-
-        const { data: { publicUrl } } = supabase.storage.from(BUCKET).getPublicUrl(path);
-
+        const publicUrl = await uploadFile(path, file.buffer, file.mimetype);
         return prisma.bookingDocument.create({
           data: {
             bookingId: booking.id,
